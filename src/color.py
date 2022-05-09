@@ -2,25 +2,40 @@ class ColorCombination:
     """
     class for represent color combination
     """
+
     def __init__(self, top: str, bottom: str):
         """
         constructor
         :param top: color of top
         :param bottom: color of bottom
         """
-        self.top = top
-        self.bottom = bottom
+        self.__top = top  # "__name" means private attribute/method
+        self.__bottom = bottom
 
-    def getTop(self):
-        return self.top
+    @property  # "@property" decorator meas getter
+    def top(self):
+        return self.__top
 
-    def getBottom(self):
-        return self.bottom
+    @property
+    def bottom(self):
+        return self.__bottom
 
-    def __eq__(self,other): ##다른 인스턴스 값가 같은지 비교
-        return self.top==other.top and self.bottom == other.bottom
+    # if you need setter, use decorator like this
+    """
+    @top.setter
+    def top(self, top):
+        self.__top = top
+
+    @bottom.setter
+    def bottom(self, bottom):
+        self.__bottom = bottom
+    """
+
+    def __eq__(self, other):  # 다른 인스턴스 값과 같은지 비교
+        return self.top == other.bottom and self.bottom == other.bottom
+
+
 # Example: ColorCombination("WHITE", "SKYBLUE") -> top == "WHITE", bottom == "SKYBLUE"
-# TODO: Implement getter
 
 
 """
@@ -114,56 +129,66 @@ combinations = [
     ColorCombination("RED", "NAVY"),
     ColorCombination("BLACK", "NAVY"),
 ]
-def checkLetters():
-    for com in combinations:
-        com.top = com.top.replace(" ","").upper()
-        com.bottom = com.bottom.replace(" ","").upper()
 
-#비교방법1 - top 비교 -> bottom 비교
-def isRepeated():
-    n=0
+
+def check_letters():
+    for com in combinations:
+        com.top = com.top.replace(" ", "").upper()
+        com.bottom = com.bottom.replace(" ", "").upper()
+
+
+# 비교방법 1 - top 비교 -> bottom 비교
+def is_repeated():
+    n = 0
     for c in combinations[1:]:
-        if combinations[n].top == c.top: #top먼저 비교 -> 같으면 하의도 같으면 T, 다르면 F
+        if combinations[n].top == c.top:  # top 먼저 비교 -> 같으면 하의도 같으면 T, 다르면 F
             re = combinations[n].bottom == c.bottom
             if re is True:
-                print(combinations[n],c)
-            return not re #return false
+                print(combinations[n], c)
+            return not re  # return false
 
-        n+=1
-    
-def checkReapeted():
-    if isRepeated() == False:
+        n += 1
+
+
+def check_repeated():
+    if not is_repeated():
         print("there is a repeated data")
-    else: print("complete data")
+    else:
+        print("complete data")
 
-checkLetters()
-checkReapeted()
 
-#비교2 __eq__메서드 이용
-def compareData():
-    n=0
+check_letters()
+check_repeated()
+
+
+# 비교2 __eq__메서드 이용
+def compare_data():
+    n = 0
     for c in combinations[1:]:
         if c.__eq__(combinations[n]):
-            print(c.top ,c.bottom, combinations[n].top,combinations[n].bottom)
+            print(c.top, c.bottom, combinations[n].top, combinations[n].bottom)
             print("same data occur!")
             break
-        n+=1
-compareData()
-#두 개다 동일한 결과 나오는 것 확인
+        n += 1
 
-# ColorfulOnes_MatchTip={maincolor:[outfit pairings with]}
-ColorfulOnes_MatchTip={ 
-    "PINK":["LIGHTBLUE",'NAVY','GRAY','WHITE','BLACK'],
-    "RED":["LIGHTBLUE",'NAVY','GRAY','WHITE','BLACK'],
-    "ORAGE":["LIGHTBLUE",'NAVY','GREEN','WHITE','BLACK'],
-    'BEIGE':["NAVY",'PURPLE','BROWN','WHITE','BLACK'],
-    'YELLOW':["GREEN",'NAVY','WHITE','BLACK'],
-    'GREEN':["ORANGE","PURPLE","WHITE","BLACK"],
-    'LIGHTBLUE':["PINK",'RED','ORANGE','WHITE','BLACK'],
-    'DARKBLUE':["PINK",'RED','YELLOW','GRAY','WHITE','BLACK'],
-    'PURPLE':["ORANGE",'GRAY','GREEN','WHITE','BLACK'],
-    'BROWN':['BEIGE','WHITE','BLACK'],
-    'GREY':["PINK",'RED','NAVY','PURPLE']
+
+compare_data()
+
+# 두 개다 동일한 결과 나오는 것 확인
+
+# ColorfulOnes_MatchTip = { maincolor: [outfit pairings with] }
+ColorfulOnes_MatchTip = {
+    "PINK": ["LIGHTBLUE", 'NAVY', 'GRAY', 'WHITE', 'BLACK'],
+    "RED": ["LIGHTBLUE", 'NAVY', 'GRAY', 'WHITE', 'BLACK'],
+    "ORANGE": ["LIGHTBLUE", 'NAVY', 'GREEN', 'WHITE', 'BLACK'],
+    'BEIGE': ["NAVY", 'PURPLE', 'BROWN', 'WHITE', 'BLACK'],
+    'YELLOW': ["GREEN", 'NAVY', 'WHITE', 'BLACK'],
+    'GREEN': ["ORANGE", "PURPLE", "WHITE", "BLACK"],
+    'LIGHTBLUE': ["PINK", 'RED', 'ORANGE', 'WHITE', 'BLACK'],
+    'DARKBLUE': ["PINK", 'RED', 'YELLOW', 'GRAY', 'WHITE', 'BLACK'],
+    'PURPLE': ["ORANGE", 'GRAY', 'GREEN', 'WHITE', 'BLACK'],
+    'BROWN': ['BEIGE', 'WHITE', 'BLACK'],
+    'GREY': ["PINK", 'RED', 'NAVY', 'PURPLE']
 }
 """
 list for store color combination 
@@ -204,5 +229,4 @@ def get_color_code(color) -> tuple:
     """
     return color_code_map[color]
 # Example: get_color_code("RED") will return (255, 0, 0)
-# TODO: Implement Function: Get color code from color_code_map
-#print(get_color_code("RED")) #test get_color_code_map
+# print(get_color_code("RED")) # test get_color_code_map
