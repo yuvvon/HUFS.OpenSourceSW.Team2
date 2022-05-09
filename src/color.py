@@ -17,6 +17,8 @@ class ColorCombination:
     def getBottom(self):
         return self.bottom
 
+    def __eq__(self,other): ##다른 인스턴스 값가 같은지 비교
+        return self.top==other.top and self.bottom == other.bottom
 # Example: ColorCombination("WHITE", "SKYBLUE") -> top == "WHITE", bottom == "SKYBLUE"
 # TODO: Implement getter
 
@@ -112,6 +114,42 @@ combinations = [
     ColorCombination("RED", "NAVY"),
     ColorCombination("BLACK", "NAVY"),
 ]
+def checkLetters():
+    for com in combinations:
+        com.top = com.top.replace(" ","").upper()
+        com.bottom = com.bottom.replace(" ","").upper()
+
+#비교방법1 - top 비교 -> bottom 비교
+def isRepeated():
+    n=0
+    for c in combinations[1:]:
+        if combinations[n].top == c.top: #top먼저 비교 -> 같으면 하의도 같으면 T, 다르면 F
+            re = combinations[n].bottom == c.bottom
+            if re is True:
+                print(combinations[n],c)
+            return not re #return false
+
+        n+=1
+    
+def checkReapeted():
+    if isRepeated() == False:
+        print("there is a repeated data")
+    else: print("complete data")
+
+checkLetters()
+checkReapeted()
+
+#비교2 __eq__메서드 이용
+def compareData():
+    n=0
+    for c in combinations[1:]:
+        if c.__eq__(combinations[n]):
+            print(c.top ,c.bottom, combinations[n].top,combinations[n].bottom)
+            print("same data occur!")
+            break
+        n+=1
+compareData()
+#두 개다 동일한 결과 나오는 것 확인
 
 # ColorfulOnes_MatchTip={maincolor:[outfit pairings with]}
 ColorfulOnes_MatchTip={ 
