@@ -39,7 +39,7 @@ class ColorCombination:
 
 
 """
-LIGHTBLUE= 연청 DARKBLUE = 진청
+LIGHTBLUE = 연청 / DARKBLUE = 진청
 data reference
         https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kkulkkuls&logNo=221587846538
         https://m.blog.naver.com/ktaitai1/221936224085
@@ -129,6 +129,9 @@ combinations = [
     ColorCombination("RED", "NAVY"),
     ColorCombination("BLACK", "NAVY"),
 ]
+"""
+list for store color combination 
+"""
 
 
 def check_letters():
@@ -190,10 +193,6 @@ ColorfulOnes_MatchTip = {
     'BROWN': ['BEIGE', 'WHITE', 'BLACK'],
     'GREY': ["PINK", 'RED', 'NAVY', 'PURPLE']
 }
-"""
-list for store color combination 
-"""
-# TODO: Add Color Combination Data
 
 
 color_code_map = {
@@ -202,41 +201,37 @@ color_code_map = {
     "BLUE": (0, 0, 255),
     "WHITE": (255, 255, 255),
     "BLACK": (0, 0, 0),
-    "NAVY":(0, 0 ,128),
-    "PINK":(255, 192, 203),
-    "YELLOW":( 255, 255, 0),
-    "MAROON":( 128, 0, 0),
-    "PURPLE":( 128, 0, 128),
-    "LIGHTPINK":( 255, 182, 193),
-    "TEAL":( 0, 128, 128),
-    "GRAY":( 128, 128, 128),
-    "LIGHTGRAY":( 211, 211, 211),
-    "LIGHTYELLOW":( 255, 255, 224),
-    "SEAGREEN":( 46, 139, 87),
-    "AQUA":( 0, 255, 255),
-    "LIGHTGREEN":( 144, 238, 144),
-    "ROYALBLUE":( 65, 105, 225),
-    "BROWN":( 165, 42, 42),
-    "MAGENTA":( 255, 0, 255),
-    "KHAKI":( 240, 230, 140),
-    "CRIMSON":( 220, 20, 60),
-    "BEIGE":( 245, 245, 220),
-    "LIGHTBLUE":( 173, 216, 230),
-    "DARKBLUE":( 0, 0, 139),
-    
-    "CHERRY":( 222, 49, 99),
-    "PEACH":( 255, 229, 180),
-    "CREAM":( 255, 253, 208),
-    "CHARCOAL":( 54, 69, 79),
-    "TURQUOISEGREEN":( 160, 214, 180),
-    "RUSTORANGE":( 196, 85, 8),
-    "LIGHTORANGE":( 254, 216, 177),
-    "SUNNYYELLOW":( 255, 249, 23),
-    
-    "NAVYBLUE":( 45, 35, 99),
-    
-    "SPRINGBLOOM":( 228, 125, 167),
-    
+    "NAVY": (0, 0, 128),
+    "PINK": (255, 192, 203),
+    "YELLOW": (255, 255, 0),
+    "MAROON": (128, 0, 0),
+    "PURPLE": (128, 0, 128),
+    "LIGHTPINK": (255, 182, 193),
+    "TEAL": (0, 128, 128),
+    "GRAY": (128, 128, 128),
+    "LIGHTGRAY": (211, 211, 211),
+    "LIGHTYELLOW": (255, 255, 224),
+    "SEAGREEN": (46, 139, 87),
+    "AQUA": (0, 255, 255),
+    "LIGHTGREEN": (144, 238, 144),
+    "ROYALBLUE": (65, 105, 225),
+    "BROWN": (165, 42, 42),
+    "MAGENTA": (255, 0, 255),
+    "KHAKI": (240, 230, 140),
+    "CRIMSON": (220, 20, 60),
+    "BEIGE": (245, 245, 220),
+    "LIGHTBLUE": (173, 216, 230),
+    "DARKBLUE": (0, 0, 139),
+    "CHERRY": (222, 49, 99),
+    "PEACH": (255, 229, 180),
+    "CREAM": (255, 253, 208),
+    "CHARCOAL": (54, 69, 79),
+    "TURQUOISEGREEN": (160, 214, 180),
+    "RUSTORANGE": (196, 85, 8),
+    "LIGHTORANGE": (254, 216, 177),
+    "SUNNYYELLOW": (255, 249, 23),
+    "NAVYBLUE": (45, 35, 99),
+    "SPRINGBLOOM": (228, 125, 167),
 }
 """
 dictionary for store RGB color code
@@ -245,9 +240,7 @@ dictionary for store RGB color code
     https://color-register.org/color/
     https://www.color-name.com/navy-blue.color
     https://www.colorxs.com/color/springtime-bloom-2079-40
-    
 """
-# TODO: Add Color Code Map
 
 
 def get_combi(where: str, color: str) -> str:
