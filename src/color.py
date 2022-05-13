@@ -21,7 +21,6 @@ class ColorCombination:
         return self.__bottom
 
     # if you need setter, use decorator like this
-    """
     @top.setter
     def top(self, top):
         self.__top = top
@@ -29,7 +28,6 @@ class ColorCombination:
     @bottom.setter
     def bottom(self, bottom):
         self.__bottom = bottom
-    """
 
     def __eq__(self, other):  # 다른 인스턴스 값과 같은지 비교
         return self.top == other.bottom and self.bottom == other.bottom
