@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 from flask import Flask, jsonify
 from color import get_combi,get_color_code
+=======
+from flask import Flask
+
+from color import *
+>>>>>>> 5c397cef68afe2377f4d80bdbb9337f943834d76
 
 app = Flask(__name__,
             static_url_path="",
