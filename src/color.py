@@ -243,7 +243,7 @@ dictionary for store RGB color code
 """
 
 
-def get_combi(where: str, color: str) -> str:
+def get_combi(where: str, color: str) -> list:
     """
     get color combination from combinations
     :param where: location. value is "TOP" or "BOTTOM"
