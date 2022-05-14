@@ -242,14 +242,17 @@ dictionary for store RGB color code
 
 
 def get_combi(where: str, color: str) -> list:
-    """
-    get color combination from combinations
-    :param where: location. value is "TOP" or "BOTTOM"
-    :param color: color of cloth
-    :return: where="TOP" will return color of bottom. where="BOTTOM" will return color of top.
-    """
-    pass
-# Example: get_combi("TOP", "WHITE") will return "SKYBLUE"
+    corList = []
+    if "TOP" in where:
+        for co in combinations:
+            if co.top == color:
+                corList.append(co.bottom)
+    elif "BOTTOM" in where:
+        for co in combinations:
+            if co.bottom == color:
+                corList.append(co.top)
+    return corList
+# Example: get_combi("TOP", "WHITE") will return {"DARKBLUE", "LIGHTBLUE","BEIGE","KHAKI", "CHARCOAL","BLACK","GRAY","NAVY"}
 # TODO: Implement Function: Get "ColorCombination" Instance from "combinations" List
 
 
