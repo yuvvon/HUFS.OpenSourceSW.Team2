@@ -1,6 +1,5 @@
-from flask import Flask
-
-from color import *
+from flask import Flask, jsonify
+from color import get_combi,get_color_code
 
 app = Flask(__name__,
             static_url_path="",
@@ -33,4 +32,5 @@ def page_not_found():
 app.register_error_handler(404, page_not_found)
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()
