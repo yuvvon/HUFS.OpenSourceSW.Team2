@@ -179,19 +179,18 @@ compare_data()
 
 # ColorfulOnes_MatchTip = { maincolor: [outfit pairings with] }
 ColorfulOnes_MatchTip = {
-    "PINK": ["LIGHTBLUE", 'NAVY', 'GRAY', 'WHITE', 'BLACK'],
-    "RED": ["LIGHTBLUE", 'NAVY', 'GRAY', 'WHITE', 'BLACK'],
-    "ORANGE": ["LIGHTBLUE", 'NAVY', 'GREEN', 'WHITE', 'BLACK'],
-    'BEIGE': ["NAVY", 'PURPLE', 'BROWN', 'WHITE', 'BLACK'],
-    'YELLOW': ["GREEN", 'NAVY', 'WHITE', 'BLACK'],
-    'GREEN': ["ORANGE", "PURPLE", "WHITE", "BLACK"],
-    'LIGHTBLUE': ["PINK", 'RED', 'ORANGE', 'WHITE', 'BLACK'],
-    'DARKBLUE': ["PINK", 'RED', 'YELLOW', 'GRAY', 'WHITE', 'BLACK'],
-    'PURPLE': ["ORANGE", 'GRAY', 'GREEN', 'WHITE', 'BLACK'],
-    'BROWN': ['BEIGE', 'WHITE', 'BLACK'],
-    'GREY': ["PINK", 'RED', 'NAVY', 'PURPLE']
+    "PINK": ["LIGHTBLUE", "NAVY", "GRAY", "WHITE", "BLACK"],
+    "RED": ["LIGHTBLUE", "NAVY", "GRAY", "WHITE", "BLACK"],
+    "ORANGE": ["LIGHTBLUE", "NAVY", "GREEN", "WHITE", "BLACK"],
+    "BEIGE": ["NAVY", "PURPLE", "BROWN", "WHITE", "BLACK"],
+    "YELLOW": ["GREEN", "NAVY", "WHITE", "BLACK"],
+    "GREEN": ["ORANGE", "PURPLE", "WHITE", "BLACK"],
+    "LIGHTBLUE": ["PINK", "RED", "ORANGE", "WHITE", "BLACK"],
+    "DARKBLUE": ["PINK", "RED", "YELLOW", "GRAY", "WHITE", "BLACK"],
+    "PURPLE": ["ORANGE", "GRAY", "GREEN", "WHITE", "BLACK"],
+    "BROWN": ["BEIGE", "WHITE", "BLACK"],
+    "GREY": ["PINK", "RED", "NAVY", "PURPLE"],
 }
-
 
 color_code_map = {
     "RED": (255, 0, 0),
@@ -252,8 +251,10 @@ def get_combi(where: str, color: str) -> list:
             if co.bottom == color:
                 corList.append(co.top)
     return corList
-# Example: get_combi("TOP", "WHITE") will return {"DARKBLUE", "LIGHTBLUE","BEIGE","KHAKI", "CHARCOAL","BLACK","GRAY","NAVY"}
-# TODO: Implement Function: Get "ColorCombination" Instance from "combinations" List
+
+
+# Example: get_combi("TOP", "WHITE")
+# will return {"DARKBLUE", "LIGHTBLUE","BEIGE","KHAKI", "CHARCOAL","BLACK","GRAY","NAVY"}
 
 
 def get_color_code(color) -> tuple:
@@ -263,5 +264,7 @@ def get_color_code(color) -> tuple:
     :return: tuple for color code
     """
     return color_code_map[color]
+
+
 # Example: get_color_code("RED") will return (255, 0, 0)
 # print(get_color_code("RED")) # test get_color_code_map

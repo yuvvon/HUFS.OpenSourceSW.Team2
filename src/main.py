@@ -1,9 +1,7 @@
-from flask import Flask, jsonify
-from color import get_combi,get_color_code
+from flask import Flask
+from color import get_combi, get_color_code
 
-app = Flask(__name__,
-            static_url_path="",
-            static_folder="web/static")
+app = Flask(__name__, static_url_path="", static_folder="web/static")
 
 
 @app.route("/")
@@ -21,11 +19,15 @@ def color_api():
     color_code = get_color_code(combi)
     # Call "get_combi" Function
     return "RESULT_OF_GET_COMBI_WILL_BE_RETURN"
+
+
 # TODO: Implement color API Route
 
 
 def page_not_found():
     return "04_ERROR_PAGE_WILL_BE_RETURN"
+
+
 # TODO: Implement 404 Error Page
 
 
