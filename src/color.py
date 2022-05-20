@@ -137,6 +137,7 @@ def check_letters():
         com.top = com.top.replace(" ", "").upper()
         com.bottom = com.bottom.replace(" ", "").upper()
 
+
 check_letters()
 # 비교2 __eq__메서드 이용
 def compare_data():
@@ -148,6 +149,7 @@ def compare_data():
             combinations.remove(c)
 
         n += 1
+
 
 compare_data()
 
