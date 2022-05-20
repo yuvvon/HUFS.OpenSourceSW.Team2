@@ -137,31 +137,7 @@ def check_letters():
         com.top = com.top.replace(" ", "").upper()
         com.bottom = com.bottom.replace(" ", "").upper()
 
-
-# 비교방법 1 - top 비교 -> bottom 비교
-def is_repeated():
-    n = 0
-    for c in combinations[1:]:
-        if combinations[n].top == c.top:  # top 먼저 비교 -> 같으면 하의도 같으면 T, 다르면 F
-            re = combinations[n].bottom == c.bottom
-            if re is True:
-                print(combinations[n], c)
-            return not re  # return false
-
-        n += 1
-
-
-def check_repeated():
-    if not is_repeated():
-        print("there is a repeated data")
-    else:
-        print("complete data")
-
-
 check_letters()
-check_repeated()
-
-
 # 비교2 __eq__메서드 이용
 def compare_data():
     n = 0
@@ -169,9 +145,9 @@ def compare_data():
         if c.__eq__(combinations[n]):
             print(c.top, c.bottom, combinations[n].top, combinations[n].bottom)
             print("same data occur!")
-            break
-        n += 1
+            combinations.remove(c)
 
+        n += 1
 
 compare_data()
 
