@@ -10,8 +10,8 @@ def index():
         return idx_file.read()
 
 
-@app.route("/api/color")
-def color_api():
+@app.route("/api/color/combi")
+def color_combi():
     color = ""
     loc = ""
 
@@ -21,7 +21,15 @@ def color_api():
     return "RESULT_OF_GET_COMBI_WILL_BE_RETURN"
 
 
-# TODO: Implement color API Route
+# TODO: Implement color combinations API Route
+
+
+@app.route("/api/color/list")
+def color_list():
+    return "RETURN_ALL_COLORS_LIST"
+
+
+# TODO: Implement color list API Route
 
 
 def page_not_found():
