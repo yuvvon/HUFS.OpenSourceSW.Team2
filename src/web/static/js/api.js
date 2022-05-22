@@ -2,7 +2,7 @@
  * API root url
  * @type {string}
  */
-const API_ROOT = "http://localhost:3000"
+const API_ROOT = "http://127.0.0.1:5000"
 
 /**
  * api endpoints
@@ -19,6 +19,35 @@ const API_URL = {
         method: "GET"
     }
 }
+
+
+const TEST_DATA = {
+    fetchColorCombiRes: {
+        pickedLoc: "TOP",
+        pickedColor: "WHITE",
+        colors: [
+            "LIGHTBLUE",
+            "BEIGE"
+        ],
+        colorCode: [
+            { name: "WHITE", code: "ffffff" },
+            { name: "LIGHTBLUE", code: "add8e6" },
+            { name: "BEIGE", code: "f5f5dc" }
+        ]
+    },
+    fetchColorListRes: {
+        list: [
+            { top: "WHITE", BOTTOM: "LIGHTBLUE" },
+            { top: "WHITE", BOTTOM: "BEIGE"}
+        ],
+        colorCode: [
+            { name: "WHITE", code: "ffffff" },
+            { name: "LIGHTBLUE", code: "add8e6" },
+            { name: "BEIGE", code: "f5f5dc" }
+        ]
+    }
+};
+
 
 /**
  * check loc is correct. loc must be "TOP" or "BOTTOM".
@@ -40,14 +69,15 @@ const fetchColorCombi = async (color, loc) => {
     if (!isCorrectLoc(loc)) {
         throw new Error(`${loc} is Invalid Loc`);
     }
-    const endpoint = API_URL.combi;
+    /*const endpoint = API_URL.combi;
 
     const url = `${API_ROOT}${endpoint.path}?color=${color}&loc=${loc}`;
     const res = await fetch(url, {
         method: endpoint.method
     });
 
-    return res.json();
+    return res.json();*/
+    return TEST_DATA.fetchColorCombiRes;
 }
 
 /**
@@ -56,10 +86,11 @@ const fetchColorCombi = async (color, loc) => {
  * @async
  */
 const fetchColorList = async () => {
-    const endpoint = API_URL.list;
+    /*const endpoint = API_URL.list;
     const url = `${API_ROOT}${endpoint.path}`;
     const res = await fetch(url, {
         method: endpoint.method
     });
-    return res.json();
+    return res.json();*/
+    return TEST_DATA.fetchColorListRes;
 }
