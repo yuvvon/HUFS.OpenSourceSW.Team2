@@ -37,8 +37,22 @@ const TEST_DATA = {
     },
     fetchColorListRes: {
         list: [
-            { top: "WHITE", BOTTOM: "LIGHTBLUE" },
-            { top: "WHITE", BOTTOM: "BEIGE"}
+            { top: "WHITE", bottom: "LIGHTBLUE" },
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
+            { top: "WHITE", bottom: "BEIGE"},
         ],
         colorCode: [
             { name: "WHITE", code: "ffffff" },
