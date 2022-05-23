@@ -92,11 +92,11 @@ combinations = [
     ColorCombination("LIGHTGRAY", "BLACK"),
     ColorCombination("LIGHTYELLOW", "BLACK"),
     ColorCombination("TURQUOISEGREEN", "BLACK"),
-    ColorCombination("NAVYBLUE", "CRAEM"),
-    ColorCombination("MAROON", "CRAEM"),
-    ColorCombination("PINK", "CRAEM"),
-    ColorCombination("SEAGREEN", "CRAEM"),
-    ColorCombination("BLACK", "CRAEM"),
+    ColorCombination("NAVYBLUE", "CREAM"),
+    ColorCombination("MAROON", "CREAM"),
+    ColorCombination("PINK", "CREAM"),
+    ColorCombination("SEAGREEN", "CREAM"),
+    ColorCombination("BLACK", "CREAM"),
     ColorCombination("SPRINGBLOOM", "GRAY"),
     ColorCombination("PURPLE", "GRAY"),
     ColorCombination("AQUA", "GRAY"),
@@ -139,6 +139,8 @@ def check_letters():
 
 
 check_letters()
+
+
 # 비교2 __eq__메서드 이용
 def compare_data():
     n = 0
