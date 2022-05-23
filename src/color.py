@@ -1,3 +1,5 @@
+# coding=utf8
+
 class ColorCombination:
     """
     class for represent color combination

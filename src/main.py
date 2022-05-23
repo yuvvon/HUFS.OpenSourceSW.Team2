@@ -1,3 +1,5 @@
+# coding=utf8
+
 from flask import Flask, request, jsonify
 
 from color import get_combi, get_color_code, combinations, color_code_map
