@@ -1,5 +1,7 @@
 # HUFS OpenSW Team 2 Project Repository
 
+Demo Here: [http://hufsoss.rflxn.xyz/](http://hufsoss.rflxn.xyz/)
+
 ## 목표
 
 * 의상 색 조합을 알려주는 사이트 구현
@@ -66,25 +68,3 @@ html 파일의 body 태그 내에 다음과 같은 스크립트 추가
 * 프론트엔드: 최준혁, 박지영
 * 백엔드: 김경식, 박윤서, 조유원
 
-## 기능별 개발 분담
-
-* 색 조합을 코드로 옮김
-    * combinations 리스트에 색 조합 채우기 -> 박윤서
-    * color_code_map 에 색 컬러코드 채우기 -> 김경식
-    * get_combi 함수 구현 -> 조유원
-    * get_color_code 함수 구현 -> 박윤서
-    * etc...
-
-* 옮긴 색 조합을 REST API를 이용하여 호출 가능하도록 구현
-    * "/api/get_color" 라우트 구현
-        * get_combi 함수 불러오기
-        * get_color_code 함수 불러오기
-        * 해당 함수를 json 형식으로 반환하기
-
-* 해당 API를 구현하기 위한 flask 라이브러리 분석
-
-* 해당 API를 이용하여 색 조합을 웹 상에서 출력 가능하도록 구현
-
-* html/css/js 설계
-
-* 웹사이트 디자인 설계
