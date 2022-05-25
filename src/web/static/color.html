@@ -5,39 +5,67 @@
   <meta charset="UTF-8">    <!-- Character Set Code -->
 
   <!-- Viewport for Bootstrap -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
 
   <!-- Load Bootstrap CSS File -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="icons/bootstrap-icons.css" rel="stylesheet">
 
-  <title>색 조합</title>   <!-- Page Title Here -->
+  <!-- Load Favicon File -->
+  <link href="/favicon.ico" rel="favicon">
+
+  <title>The Best CC for You - Combi</title>   <!-- Page Title Here -->
 </head>
 
 <body>    <!-- HTML Body Here -->
 
-<header class="p-3 navbar bg-dark navbar-dark">   <!-- Header Navigation Bar -->
-  <div class="container-md">    <!-- Wrap Contents by Container -->
-    <a class="navbar-brand" href="/">TITLE_HERE</a>   <!-- Navigation Bar Brand Here (Home Page Title) -->
+<header class="p-3 navbar bg-dark navbar-dark" id="header-tag">   <!-- Header Navigation Bar -->
+  <div class="container-md" id="header-container">    <!-- Wrap Contents by Container -->
+    <a class="navbar-brand" href="/" id="navbar-brand">The Best CC for You</a>
+    <!-- Navigation Bar Brand Here (Home Page Title) -->
 
     <!-- Hide Catch Praise When Viewport is Smaller than Medium -->
-    <ul class="navbar-nav d-none d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
-      <li class="nav-item text-white">CATCH_PRAISE_HERE</li>    <!-- Catch Praise Here -->
+    <ul class="navbar-nav d-none d-md-flex d-lg-flex d-xl-flex d-xxl-flex" id="navbar-catch-praise-wrap">
+      <li class="nav-item text-white" id="navbar-catch-praise">Get Your Cloth Color Combination</li>
+      <!-- Catch Praise Here -->
     </ul>
   </div>
 </header>
 
-<main class="container-md"><br>   <!-- Page Main Contents Here / Contents will be Wrapped by Container -->
-TODO: ADD PAGE CONTENTS
+<main class="container-md my-5" id="main-tag"><br>
+  <!-- Page Main Contents Here / Contents will be Wrapped by Container -->
+  <div class="text-center my-5" id="main-cover">
+    <h1 id="main-picked-title">Your Color: </h1>
+    <div class="my-5 row" id="picked-color-div" style="width: 100%">
+      <div class="col-4 offset-4">
+        <div id="picked-color-box" style="padding-bottom: 100%; border-radius: 0.5em;"></div>
+      </div>
+    </div>
+
+    <!-- Color Combinations Div -->
+    <div class="my-5" id="combi-color-set-div">
+      <h1 id="combination-title">Cloth Color Combination</h1>   <!-- Header Title -->
+      <div class="my-5" id="combi-color-div">   <!-- Combination Color Print Area Here -->
+
+        <!-- ----------------- ADD YOUR COMBI COLOR HTML CODE HERE --------------------- -->
+        TODO: ADD COMBINATION PALETTE
+
+      </div>
+    </div>
+  </div>
 </main>
 
-<footer class="py-3 my-4">    <!-- Page Footer Here -->
-  <div class="container">   <!-- Wrap Contents by Container -->
+<footer class="py-3 my-5" id="footer-tag">    <!-- Page Footer Here -->
+  <div class="container my-5" id="footer-container">   <!-- Wrap Contents by Container -->
 
     <!-- Copyrights, Our Introduction, or etc...  -->
-    <p class="text-center text-muted">HUFS Open Source SW Team 2</p>
+    <p class="text-center text-muted" id="footer-introduction">HUFS Open Source SW Team 2</p>
   </div>
 </footer>
 
 <script src="js/bootstrap.min.js"></script>   <!-- Import Bootstrap JS File -->
+<script src="js/api.js"></script>             <!-- Import API JS File -->
+<script src="js/shared.js"></script>          <!-- Import Shared JS File -->
+<script src="js/color.js"></script>           <!-- Import Page JS File -->
 </body>
 </html>

@@ -1,3 +1,5 @@
+# coding=utf8
+
 class ColorCombination:
     """
     class for represent color combination
@@ -92,11 +94,11 @@ combinations = [
     ColorCombination("LIGHTGRAY", "BLACK"),
     ColorCombination("LIGHTYELLOW", "BLACK"),
     ColorCombination("TURQUOISEGREEN", "BLACK"),
-    ColorCombination("NAVYBLUE", "CRAEM"),
-    ColorCombination("MAROON", "CRAEM"),
-    ColorCombination("PINK", "CRAEM"),
-    ColorCombination("SEAGREEN", "CRAEM"),
-    ColorCombination("BLACK", "CRAEM"),
+    ColorCombination("NAVYBLUE", "CREAM"),
+    ColorCombination("MAROON", "CREAM"),
+    ColorCombination("PINK", "CREAM"),
+    ColorCombination("SEAGREEN", "CREAM"),
+    ColorCombination("BLACK", "CREAM"),
     ColorCombination("SPRINGBLOOM", "GRAY"),
     ColorCombination("PURPLE", "GRAY"),
     ColorCombination("AQUA", "GRAY"),
@@ -137,7 +139,10 @@ def check_letters():
         com.top = com.top.replace(" ", "").upper()
         com.bottom = com.bottom.replace(" ", "").upper()
 
+
 check_letters()
+
+
 # 비교2 __eq__메서드 이용
 def compare_data():
     n = 0
@@ -148,6 +153,7 @@ def compare_data():
             combinations.remove(c)
 
         n += 1
+
 
 compare_data()
 
