@@ -9,7 +9,6 @@ ref  https://velog.io/@jewon119/01.Flask-%EA%B8%B0%EC%B4%88-REST-API-%EA%B5%AC%E
 """
 app = Flask(__name__, static_url_path="", static_folder="web/static")
 
-
 def make_2len_hex(hex_code):
     if len(hex_code) == 1:
         return "0" + hex_code
@@ -26,7 +25,6 @@ def rgb_to_hex(r, g, b):
     hex_b = make_2len_hex(hex_b)
 
     return hex_r + hex_g + hex_b
-
 
 @app.route("/")
 def index_page():
