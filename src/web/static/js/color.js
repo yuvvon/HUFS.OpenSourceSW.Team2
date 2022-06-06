@@ -3,6 +3,7 @@ const combinationTitle = getElem("#main-picked-title");
 const pickedColorDiv = getElem("#picked-color-div");
 const pickedColorBox = getElem("#picked-color-box");
 const combiPaletteDiv = getElem("#combi-color-div");
+const combiColorPalette = getElem("#combi-color-palette-row-div");
 
 /**
  * make #main-picked-title to `Your Color: ${color} on ${loc}`
@@ -82,8 +83,39 @@ const makePickedColorBoxToColored = (elem, colorCode) => {
             const pickedColorCode = getColorCode(color);
             makePickedColorBoxToColored(pickedColorBox, pickedColorCode);
 
-            // ------------- ADD YOUR CODE HERE --------------
-            // TODO: MAKE COMBINATION COLOR LIST FROM combinationList
+            /**
+             * create color palette HTML element
+             * @param {number} idx - index for element id
+             * @param {string} colorName - color name
+             * @param {string} colorCode - hex color code
+             * @returns {HTMLDivElement}
+             */
+            const createColorPaletteElem = (idx, colorName, colorCode) => {
+                const box = createSquareDiv(colorCode);
+
+                const text = document.createElement("p");
+                text.innerText = colorName;
+
+                const boxWrap = document.createElement("div");
+                boxWrap.style.width = "100%";
+                boxWrap.appendChild(box);
+
+                const setWrap = document.createElement("div");
+                setWrap.className = "col-6 col-xs-4 col-md-3 col-lg-2 text-center";
+                setWrap.id = `color-palette-color-set-wrap-${idx}`;
+                setWrap.appendChild(boxWrap)
+                setWrap.appendChild(text);
+
+
+                return setWrap;
+            }
+
+            combinationList.map((colorName, idx) => {
+                const colorCode = getColorCode(colorName);
+                const elem = createColorPaletteElem(idx, colorName, colorCode);
+                combiColorPalette.appendChild(elem);
+            });
+
 
         } catch (e) {
             console.log(e);
