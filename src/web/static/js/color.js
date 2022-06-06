@@ -95,7 +95,7 @@ const makePickedColorBoxToColored = (elem, colorCode) => {
 
                 const text = document.createElement("p");
                 text.innerText = colorName;
-                
+
                 const boxWrap = document.createElement("div");
                 boxWrap.style.width = "100%";
                 boxWrap.appendChild(box);
@@ -105,7 +105,6 @@ const makePickedColorBoxToColored = (elem, colorCode) => {
                 setWrap.id = `color-palette-color-set-wrap-${idx}`;
                 setWrap.appendChild(boxWrap)
                 setWrap.appendChild(text);
-                
 
 
                 return setWrap;
